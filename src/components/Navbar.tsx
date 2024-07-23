@@ -2,9 +2,9 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div>
+    <nav className='absolute bg-transparent z-10'>
       Navbar
-    </div>
+    </nav>
   )
 }
 

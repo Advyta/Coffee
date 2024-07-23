@@ -22,7 +22,7 @@ module.exports = {
         //  'bg-one': "url('/src/assets/mike-kenneally-tNALoIZhqVM-unsplash.jpg')",
       },
       aspectRatio: {
-        'bg-1': '32 / 21',
+        'bg-1': '16 / 9',
       },
     },
   },
