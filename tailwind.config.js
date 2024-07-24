@@ -13,7 +13,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-
+        'inactive-text': 'oklch(80% 0.02 90)',
+        'active-text': 'oklch(95% 0.02 90)',
+        'dark-text': 'oklch(10% 0.05 270',
       },
       fontFamily: {
         lato: ['Lato', "sans-serif"]
@@ -23,6 +25,7 @@ module.exports = {
       },
       aspectRatio: {
         'bg-1': '16 / 9',
+        'bg-2': '3 / 4',
       },
     },
   },
@@ -51,17 +54,21 @@ module.exports = {
         '.body-l': {
           fontFamily: 'lato',
           fontSize: 'clamp(1rem, 0.172vw + 0.96rem, 1.125rem)',
+          letterSpacing: '0.01em',
         },
         '.body-m': {
           fontFamily: 'lato',
           fontSize: 'clamp(0.875rem, 0.172vw + 0.835rem, 1rem)',
+          letterSpacing: '0.035px',
         },
         '.body-s': {
           fontFamily: 'lato',
           fontSize: 'clamp(0.75rem, 0.172vw + 0.71rem, 0.875rem)',
+          letterSpacing: '0.048px',
         },
       })
-    })
+    }),
+    require('daisyui'),
   ],
 }
 
