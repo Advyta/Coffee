@@ -1,7 +1,7 @@
-'use client'
-import React, { useEffect, useRef, useState } from 'react'
-import bgOne from '../../assets/mike-kenneally-tNALoIZhqVM-unsplash.jpg'
-import bgtwo from '../../assets/istockphoto-1467199120-2048x20481.jpg'
+'use client';
+import React, { useEffect, useRef, useState } from 'react';
+import bgOne from '../../assets/mike-kenneally-tNALoIZhqVM-unsplash.jpg';
+import bgtwo from '../../assets/istockphoto-1467199120-2048x20481.jpg';
 import gsap from 'gsap';
 
 export default function Homepage() {
@@ -24,7 +24,6 @@ export default function Homepage() {
     updateBackground();
     window.addEventListener('resize', updateBackground);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener('resize', updateBackground);
     };
@@ -41,18 +40,19 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div className="bg-cover w-full relative"
+    <div className="relative w-full bg-cover"
       style={{
         backgroundImage: `url(${bgImage})`,
         aspectRatio: aspectRatio
       }}
     >
-      <div className="flex justify-end ">
-        <div className=' md:mt-36 md:mr-16 mt-20 mr-5'>
-          <h1 ref={titleRef} className='page-title'>Coffee Creations</h1>
-          <p ref={subtitleRef} className='heading-3 italic'>Create Happiness</p>
+      <div className="absolute bottom-0 left-0 w-full h-1/15 bg-gradient-to-b from-transparent to-background"></div>
+      <div className="flex md:justify-end justify-center relative z-10">
+        <div className='md:mt-36 md:mr-16 mt-24 mr-5 grid'>
+          <h1 ref={titleRef} className='page-title justify-self-center'>Coffee Creations</h1>
+          <p ref={subtitleRef} className='heading-3 italic justify-self-center'>Create Happiness</p>
         </div>
       </div>
     </div>
-  )
+  );
 }

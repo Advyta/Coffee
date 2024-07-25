@@ -16,11 +16,11 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <Disclosure as='nav' className='absolute z-10 w-full mx-auto'>
+    <Disclosure as='nav' className='absolute z-20 w-full mx-auto'>
       {({ open }) => (
         <>
-          <div className={`relative flex h-16 items-center px-2 md:px-3 justify-between backdrop-blur-sm ${open ? 'backdrop-blur-2xl transition-all duration-300' : 'backdrop-blur-sm'}`}>
-            <div className="absolute inset-y-0 right-0 flex items-center md:hidden">
+          <div className={`relative flex h-16 items-center px-5 md:px-16 justify-between backdrop-blur-sm ${open ? 'backdrop-blur-2xl transition-all duration-300' : 'backdrop-blur-sm'}`}>
+            <div className="absolute inset-y-0 right-2 flex items-center md:hidden">
               {/* Mobile menu button */}
               <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-inactive-text hover:bg-gray-700 hover:text-active-text focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="absolute -inset-0.5" />

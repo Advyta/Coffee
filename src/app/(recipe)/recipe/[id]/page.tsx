@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Recipies = () => {
+const Recipie = () => {
   return (
     <div>
-      Recipies
+      Recipie
     </div>
   )
 }
 
-export default Recipies
+export default Recipie
