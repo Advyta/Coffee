@@ -9,7 +9,7 @@ const navigation: {
   name: string; href: string;
 }[] = [
     { name: 'Coffee\'s Journey', href: '/' },
-    { name: 'Recipies', href: '/recipies' },
+    { name: 'Recipes', href: '/recipes' },
   ];
 
 const Navbar = () => {

@@ -4,6 +4,9 @@ import "./globals.css";
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false
+import StoreProvider from "./StoreProvider";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +28,19 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.jpg" sizes="any" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <StoreProvider>
+        <body className={inter.className}>
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            {children}
+          </main>
+          <footer>
+            <Footer />
+          </footer>
+        </body>
+      </StoreProvider>
     </html>
   );
 }
