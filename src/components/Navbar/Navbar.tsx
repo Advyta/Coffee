@@ -30,7 +30,7 @@ const Navbar = () => {
               </DisclosureButton>
             </div>
             <div className='flex flex-1 items-stretch justify-between'>
-              <p className='body-l p-2'>Coffee Creations</p>
+              <Link href='/' className='body-l p-2'>Coffee Creations</Link>
 
               <div className="hidden md:ml-6 md:block">
                 <div className='flex space-x-4'>

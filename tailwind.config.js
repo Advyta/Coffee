@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       colors: {
         'background': ' oklch(13.35% 0.041 45.95)',
+        'background-35': 'oklch(13.35% 0.041 45.95 / 35%)',
         'inactive-text': 'oklch(80% 0.02 90)',
         'active-text': 'oklch(95% 0.02 90)',
         'dark-text': 'oklch(10% 0.05 270',
@@ -72,7 +73,6 @@ module.exports = {
         },
       })
     }),
-    require('daisyui'),
   ],
 }
 

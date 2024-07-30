@@ -10,7 +10,7 @@ export default function Recipes() {
   const recipes = useAppSelector((state) => state.recipes);
 
   useEffect(() => {
-    dispatch(fetchRecipes());
+    dispatch(fetchRecipes(''));
   }, [dispatch])
 
   return (

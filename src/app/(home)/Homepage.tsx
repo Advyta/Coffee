@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
 import bgOne from '../../assets/mike-kenneally-tNALoIZhqVM-unsplash.jpg';
-import bgtwo from '../../assets/istockphoto-1467199120-2048x20481.jpg';
+import bgOne_mob from '../../assets/istockphoto-1467199120-2048x20481.jpg';
 import gsap from 'gsap';
 
 export default function Homepage() {
@@ -13,7 +13,7 @@ export default function Homepage() {
   useEffect(() => {
     const updateBackground = () => {
       if (window.innerWidth < 768) {
-        setBgImage(bgtwo.src);
+        setBgImage(bgOne_mob.src);
         setAspectRatio('3 / 4');
       } else {
         setBgImage(bgOne.src);
@@ -40,7 +40,7 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div className="relative w-full bg-cover"
+    <div className="relative w-full bg-cover snap-center snap-always"
       style={{
         backgroundImage: `url(${bgImage})`,
         aspectRatio: aspectRatio
