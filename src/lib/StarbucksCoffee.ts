@@ -1,4 +1,6 @@
-export const selectedRecipes = [
+import { Coffee } from "@/lib/types";
+
+export const StarbucksCoffee: Coffee[] = [
   {
       _id: "6681b8d94507f78afe801839",
       context: "https://schema.org",
@@ -308,13 +310,13 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "Peppermint White Chocolate Coffee",
       image: "https://athome.starbucks.com/sites/default/files/2023-11/CAH_Recipe_Header_2880x1660_0.jpg",
-      description: "Time to cozy up by the fire. Celebrate the season with this delicious peppermint and white chocolaty recipe featuring new Starbucks® Holiday Blend for Nespresso® Vertuo and Starbucks® White Chocolate Flavored Creamer.",
+      description: "Time to cozy up by the fire. Celebrate the season with this delicious peppermint and white chocolaty recipe featuring new Starbucks® Hol_iday Blend for Nespresso® Vertuo and Starbucks® White Chocolate Flavored Creamer.",
       recipeYield: "1 serving",
       datePublished: "Tue, 11/07/2023 - 15:45",
       prepTime: "PT4M",
       totalTime: "PT4M",
       recipeIngredient: [
-          "1  brewed coffee capsule of Starbucks® Holiday Blend for Nespresso® Vertuo",
+          "1  brewed coffee capsule of Starbucks® Hol_iday Blend for Nespresso® Vertuo",
           "1 oz Starbucks® White Chocolate Flavored Creamer",
           "2 oz whole milk",
           "1  peppermint puff candy (or other desired peppermint candy)​",
@@ -324,7 +326,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "01",
-              text: "Place the peppermint candy into a 12-oz mug and then brew 1 capsule of Starbucks® Holiday Blend for Nespresso® Vertuo on top.",
+              text: "Place the peppermint candy into a 12-oz mug and then brew 1 capsule of Starbucks® Hol_iday Blend for Nespresso® Vertuo on top.",
               image: ""
           },
           {
@@ -422,7 +424,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Remove from heat. Strain through fine mesh strainer into a bowl until all liquid has dripped through. Gently stirring can help the liquid pass through the strainer.",
+              text: "Remove from heat. Strain through fine mesh strainer into a bowl until all liqu_id has dripped through. Gently stirring can help the liqu_id pass through the strainer.",
               image: ""
           },
           {
@@ -553,7 +555,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "04",
-              text: "Froth 2% milk using your preferred method. For more information on how to froth your milk, see our frothing guide here.",
+              text: "Froth 2% milk using your preferred method. For more information on how to froth your milk, see our frothing gu_ide here.",
               image: ""
           },
           {
@@ -696,7 +698,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Remove from heat and let cool for 20–30 minutes. You can store your honey syrup in the fridge for up to 7 days.",
+              text: "Remove from heat and let cool for 20–30 minutes. You can store your honey syrup in the fr_idge for up to 7 days.",
               image: ""
           },
           {
@@ -714,13 +716,13 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "06",
-              text: "Froth almondmilk using your preferred method. For more information on how to froth your milk, see our frothing guide here. As you froth your milk, try using a spoon to gently push the microbubbles to the bottom of the pitcher. This will result in a smoother, more velvety texture for your flat white.",
+              text: "Froth almondmilk using your preferred method. For more information on how to froth your milk, see our frothing gu_ide here. As you froth your milk, try using a spoon to gently push the microbubbles to the bottom of the pitcher. This will result in a smoother, more velvety texture for your flat white.",
               image: ""
           },
           {
               type: "HowToStep",
               name: "07",
-              text: "Gently pour your frothed milk into your mug until it’s almost full, then focus on the middle of your mug and pour a little faster so the foam will come out without moving your pitcher. As the foam starts to come out, continue to pour until you get a dot in the middle.",
+              text: "Gently pour your frothed milk into your mug until it’s almost full, then focus on the m_iddle of your mug and pour a little faster so the foam will come out without moving your pitcher. As the foam starts to come out, continue to pour until you get a dot in the m_iddle.",
               image: "https://athome.starbucks.com/sites/default/files/2021-08/AlmondHoneyFlatWhite_Step7.jpg"
           }
       ],
@@ -754,7 +756,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "02",
-              text: "Pour oatmilk mixture into ice cube trays. Freeze until solid—usually 3–4 hours.",
+              text: "Pour oatmilk mixture into ice cube trays. Freeze until sol_id—usually 3–4 hours.",
               image: ""
           },
           {
@@ -1239,7 +1241,7 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "Cinnamon Coffee Cake",
       image: "https://athome.starbucks.com/sites/default/files/2021-09/CinnamonCoffeeCake_overview_2880x1660.jpg",
-      description: "Our Coffee Cake has been a classic in our cafés for almost as long as they’ve been open. Bring the quintessential sweet treat home in all its cinnamon swirly goodness with this recipe. Enjoy alongside a cup of rich and lively Breakfast Blend coffee for a delicious combination of sweet morning flavors.",
+      description: "Our Coffee Cake has been a classic in our cafés for almost as long as they’ve been open. Bring the quintessential sweet treat home in all its cinnamon swirly goodness with this recipe. Enjoy alongs_ide a cup of rich and lively Breakfast Blend coffee for a delicious combination of sweet morning flavors.",
       recipeYield: "1 serving",
       datePublished: "Wed, 09/08/2021 - 08:20",
       prepTime: "PT45M",
@@ -1267,13 +1269,13 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Stop and scrape down the sides and bottom of bowl.",
+              text: "Stop and scrape down the s_ides and bottom of bowl.",
               image: ""
           },
           {
               type: "HowToStep",
               name: "04",
-              text: "Now add in 1 egg at a time, mixing in between each addition. Stop and scrape down the sides and bottom of bowl.",
+              text: "Now add in 1 egg at a time, mixing in between each addition. Stop and scrape down the s_ides and bottom of bowl.",
               image: ""
           },
           {
@@ -1309,7 +1311,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "10",
-              text: "Bake for 12–15 minutes, let cool, then serve and enjoy alongside a freshly brewed cup of Starbucks® Breakfast Blend coffee.",
+              text: "Bake for 12–15 minutes, let cool, then serve and enjoy alongs_ide a freshly brewed cup of Starbucks® Breakfast Blend coffee.",
               image: ""
           }
       ],
@@ -1706,7 +1708,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "01",
-              text: "Using a milk frother on its cold setting or a frothing wand, froth milk, caramel sauce and sea salt until smooth and creamy with fine bubbles. Set aside.",
+              text: "Using a milk frother on its cold setting or a frothing wand, froth milk, caramel sauce and sea salt until smooth and creamy with fine bubbles. Set as_ide.",
               image: ""
           },
           {
@@ -1833,7 +1835,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "04",
-              text: "Froth oatmilk and cinnamon syrup using your preferred cold method. You can use a handheld frother or froth the oatmilk by hand. For more information on how to froth milk or milk alternatives, see our frothing guide here.",
+              text: "Froth oatmilk and cinnamon syrup using your preferred cold method. You can use a handheld frother or froth the oatmilk by hand. For more information on how to froth milk or milk alternatives, see our frothing gu_ide here.",
               image: ""
           },
           {
@@ -1888,7 +1890,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Drizzle a line of Caramel Sauce along the inside of your glass.",
+              text: "Drizzle a line of Caramel Sauce along the ins_ide of your glass.",
               image: ""
           },
           {
@@ -1946,7 +1948,7 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "Chocolate Chip Cookies Recipe",
       image: "https://athome.starbucks.com/sites/default/files/2021-09/Chocolate%20Chip%20Cookies%20Recipe%20Header_0.png",
-      description: "Chocolate chip cookies? Even better, Starbucks® Coffee Chocolate Chip Cookies! They’re a classic snack for a reason, and in this recipe we bring the childhood favorite back with a twist to be enjoyed alongside your favorite cup of Starbucks® coffee.",
+      description: "Chocolate chip cookies? Even better, Starbucks® Coffee Chocolate Chip Cookies! They’re a classic snack for a reason, and in this recipe we bring the childhood favorite back with a twist to be enjoyed alongs_ide your favorite cup of Starbucks® coffee.",
       recipeYield: "1 Serving",
       datePublished: "Thu, 06/03/2021 - 07:38",
       prepTime: "PT25M",
@@ -1979,7 +1981,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Add the eggs, one at a time, scraping the sides of the bowl after each egg is added and fully combined.",
+              text: "Add the eggs, one at a time, scraping the s_ides of the bowl after each egg is added and fully combined.",
               image: ""
           },
           {
@@ -2492,7 +2494,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "02",
-              text: "Froth your milk using your preferred method. For more information on how to froth your milk, see our frothing guide here.",
+              text: "Froth your milk using your preferred method. For more information on how to froth your milk, see our frothing gu_ide here.",
               image: ""
           },
           {
@@ -2594,7 +2596,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "04",
-              text: "Froth 2% milk using your preferred method. For more information on how to froth your milk, see our frothing guide here.",
+              text: "Froth 2% milk using your preferred method. For more information on how to froth your milk, see our frothing gu_ide here.",
               image: ""
           },
           {
@@ -2646,7 +2648,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Froth milk mixture using your preferred cold method. You can use a handheld milk frother or froth your milk by hand. For more information on how to froth your milk, see our frothing guide here.",
+              text: "Froth milk mixture using your preferred cold method. You can use a handheld milk frother or froth your milk by hand. For more information on how to froth your milk, see our frothing gu_ide here.",
               image: ""
           },
           {
@@ -2754,7 +2756,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Once foam and milk solids settle to the bottom, remove from heat. Store in a heatproof container.",
+              text: "Once foam and milk sol_ids settle to the bottom, remove from heat. Store in a heatproof container.",
               image: ""
           },
           {
@@ -2772,7 +2774,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Froth milk and pour over the coffee. Learn more about enhancing your frothing skills by visiting our milk frothing guide.",
+              text: "Froth milk and pour over the coffee. Learn more about enhancing your frothing skills by visiting our milk frothing gu_ide.",
               image: ""
           },
           {
@@ -2824,7 +2826,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "01",
-              text: "Heat and froth milk in a Nespresso® Aeroccino frother. For more information on how to froth your milk, see our frothing guide here.",
+              text: "Heat and froth milk in a Nespresso® Aeroccino frother. For more information on how to froth your milk, see our frothing gu_ide here.",
               image: ""
           },
           {
@@ -2959,7 +2961,7 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "Citrus Coffee Spritzer",
       image: "https://athome.starbucks.com/sites/default/files/2023-02/CITRIS-COFFEE-SPRITZER_Header_0.jpeg",
-      description: "The delicious smoothness of Starbucks® Veranda Blend® coffee serves as the base for an incredibly refreshing spritzer. Bold, citrusy and nicely spiced—it’s the ideal mocktail for easy sipping.",
+      description: "The delicious smoothness of Starbucks® Veranda Blend® coffee serves as the base for an incredibly refreshing spritzer. Bold, citrusy and nicely spiced—it’s the _ideal mocktail for easy sipping.",
       recipeYield: "1 serving",
       datePublished: "Mon, 02/27/2023 - 17:19",
       prepTime: "PT23M",
@@ -2986,7 +2988,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Place orange peel strips into the liquid.",
+              text: "Place orange peel strips into the liqu_id.",
               image: ""
           },
           {
@@ -3090,13 +3092,13 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "02",
-              text: "Froth whole milk using your preferred method. For more information on how to froth your milk, see our frothing guide here.",
+              text: "Froth whole milk using your preferred method. For more information on how to froth your milk, see our frothing gu_ide here.",
               image: "https://athome.starbucks.com/sites/default/files/2021-06/flatwhite_step2.jpg"
           },
           {
               type: "HowToStep",
               name: "03",
-              text: "Gently pour your frothed milk into your mug until it’s almost full, then focus on the middle of your mug and pour a little faster so the foam will come out without moving your pitcher. As the foam starts to come out, continue to pour until you get a dot in the middle.",
+              text: "Gently pour your frothed milk into your mug until it’s almost full, then focus on the m_iddle of your mug and pour a little faster so the foam will come out without moving your pitcher. As the foam starts to come out, continue to pour until you get a dot in the m_iddle.",
               image: "https://athome.starbucks.com/sites/default/files/2021-06/flatwhite_step3.jpg"
           },
           {
@@ -3437,7 +3439,7 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "Lemon Bars Recipe",
       image: "https://athome.starbucks.com/sites/default/files/2021-09/LemonBars_overview_2880x1660.jpg",
-      description: "Lemon bars are a perfectly powdery and tastefully tart way to sweeten up someone’s day. Whether it’s a special occasion, a treat alongside breakfast or a lemony accompaniment to your favorite cup of Starbucks® coffee, this recipe is guaranteed to be a delectable crowd-pleaser.",
+      description: "Lemon bars are a perfectly powdery and tastefully tart way to sweeten up someone’s day. Whether it’s a special occasion, a treat alongs_ide breakfast or a lemony accompaniment to your favorite cup of Starbucks® coffee, this recipe is guaranteed to be a delectable crowd-pleaser.",
       recipeYield: "1",
       datePublished: "Wed, 09/08/2021 - 09:08",
       prepTime: "PT60M",
@@ -3805,7 +3807,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "04",
-              text: "Store your syrup in a container in the fridge.",
+              text: "Store your syrup in a container in the fr_idge.",
               image: ""
           },
           {
@@ -3960,9 +3962,9 @@ export const selectedRecipes = [
       _id: "6681b8d94507f78afe801895",
       context: "https://schema.org",
       type: "Recipe",
-      name: "Upside Down Cold Brew Dalgona Coffee",
-      image: "https://athome.starbucks.com/sites/default/files/2021-06/DalgonaUpsideDown_Header_0.jpg",
-      description: "It’s Dalgona with a twist. Try our cold brew take on the viral coffee sensation, and learn how to make it upside down for a drink that’s as delicious as it is eye-catching.",
+      name: "Ups_ide Down Cold Brew Dalgona Coffee",
+      image: "https://athome.starbucks.com/sites/default/files/2021-06/DalgonaUps_ideDown_Header_0.jpg",
+      description: "It’s Dalgona with a twist. Try our cold brew take on the viral coffee sensation, and learn how to make it ups_ide down for a drink that’s as delicious as it is eye-catching.",
       recipeYield: "1 serving",
       datePublished: "Thu, 06/03/2021 - 14:27",
       prepTime: "PT12M",
@@ -3980,25 +3982,25 @@ export const selectedRecipes = [
               type: "HowToStep",
               name: "01",
               text: "Pour 4 oz of Starbucks® Multi-Serve Cold Brew Concentrate into a glass over ice, combine with 4 oz of water and stir.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/Dalgona_UpsideDown_step1.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/Dalgona_Ups_ideDown_step1.jpg"
           },
           {
               type: "HowToStep",
               name: "02",
               text: "In a mixing bowl, combine your heavy cream, sugar and vanilla and whisk vigorously until the mixture turns light and fluffy like whipped cream.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/Dalgona_UpsideDown_step2.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/Dalgona_Ups_ideDown_step2.jpg"
           },
           {
               type: "HowToStep",
               name: "03",
               text: "Layer your whipped topping over the top of the coffee.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/Dalgona_UpsideDown_step3.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/Dalgona_Ups_ideDown_step3.jpg"
           },
           {
               type: "HowToStep",
               name: "04",
               text: "Make your drink a little more summery with unique toppings like coconut shavings, fruit or cinnamon.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/Dalgona_UpsideDown_step4.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/Dalgona_Ups_ideDown_step4.jpg"
           }
       ],
       category: "ICED BEVERAGES"
@@ -4203,7 +4205,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "01",
-              text: "Cut the avocados across the short side through the center, creating a ring. Peel away the skin and reserve the rings for plating. Save the remaining trim for the sauce.",
+              text: "Cut the avocados across the short s_ide through the center, creating a ring. Peel away the skin and reserve the rings for plating. Save the remaining trim for the sauce.",
               image: ""
           },
           {
@@ -4227,7 +4229,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "05",
-              text: "Crack an egg into the simmering water and cook for approx. 4 minutes. The yolk should still be soft with the outside white set.",
+              text: "Crack an egg into the simmering water and cook for approx. 4 minutes. The yolk should still be soft with the outs_ide white set.",
               image: ""
           },
           {
@@ -4245,7 +4247,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "08",
-              text: "Lay 1 slice of smoked salmon on one side of the English muffin.",
+              text: "Lay 1 slice of smoked salmon on one s_ide of the English muffin.",
               image: ""
           },
           {
@@ -4521,7 +4523,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "In a separate container, froth 2% milk using your preferred method. You can use a handheld milk frother or froth your milk by hand. Read our frothing guide here.",
+              text: "In a separate container, froth 2% milk using your preferred method. You can use a handheld milk frother or froth your milk by hand. Read our frothing gu_ide here.",
               image: ""
           },
           {
@@ -4590,7 +4592,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Foam extra creamy oatmilk and pour into the mug. You can use a handheld milk frother or froth your milk by hand. For more information on how to froth your milk, see our frothing guide here.",
+              text: "Foam extra creamy oatmilk and pour into the mug. You can use a handheld milk frother or froth your milk by hand. For more information on how to froth your milk, see our frothing gu_ide here.",
               image: ""
           }
       ],
@@ -4663,7 +4665,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "01",
-              text: "Drape cheesecloth inside the mason jar.",
+              text: "Drape cheesecloth ins_ide the mason jar.",
               image: "https://athome.starbucks.com/sites/default/files/2021-06/OldFasioned_Step1.jpg"
           },
           {
@@ -4723,7 +4725,7 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "Coffee Drizzle Glaze​",
       image: "https://athome.starbucks.com/sites/default/files/2021-06/CoffeeDrizzleGlaze_overview.jpg",
-      description: "Next time you’re brewing coffee, put a little to the side to make this simple, flavorful drizzle—perfect for topping off all your favorite baked goods.",
+      description: "Next time you’re brewing coffee, put a little to the s_ide to make this simple, flavorful drizzle—perfect for topping off all your favorite baked goods.",
       recipeYield: "1 serving",
       datePublished: "Wed, 06/30/2021 - 13:15",
       prepTime: "PT3M",
@@ -5070,7 +5072,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "02",
-              text: "Froth milk and pour over the coffee. Discover your preferred frothing method by visiting our milk frothing guide.",
+              text: "Froth milk and pour over the coffee. Discover your preferred frothing method by visiting our milk frothing gu_ide.",
               image: ""
           },
           {
@@ -5215,7 +5217,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "01",
-              text: "Line baking sheet or plate with parchment paper and set aside.",
+              text: "Line baking sheet or plate with parchment paper and set as_ide.",
               image: ""
           },
           {
@@ -5356,7 +5358,7 @@ export const selectedRecipes = [
       prepTime: "PT7M",
       totalTime: "PT7M",
       recipeIngredient: [
-          "2 cups of water (divided)",
+          "2 cups of water (div_ided)",
           "0.5 cup  sugar",
           "2 shots Starbucks® Espresso Roast",
           "0.125 cup  milk",
@@ -5426,7 +5428,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "02",
-              text: "Froth remaining cereal milk and sugar using your preferred method. For more information on how to froth your milk, see our frothing guide here.",
+              text: "Froth remaining cereal milk and sugar using your preferred method. For more information on how to froth your milk, see our frothing gu_ide here.",
               image: ""
           },
           {
@@ -5663,7 +5665,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "02",
-              text: "Place lid on and shake for 20 seconds. ​",
+              text: "Place l_id on and shake for 20 seconds. ​",
               image: "https://athome.starbucks.com/sites/default/files/2022-09/SaltedCaramelMartini_Web_RecipeStep_1740x1050.jpg"
           },
           {
@@ -5675,7 +5677,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "04",
-              text: "Divide mixture from the shaker into the glasses. Enjoy.​",
+              text: "Div_ide mixture from the shaker into the glasses. Enjoy.​",
               image: ""
           }
       ],
@@ -5722,7 +5724,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "04",
-              text: "Combine all bread in a greased 9”x13” baking dish. Pour custard liquid evenly and gently press bread down to ensure all pieces are saturated.",
+              text: "Combine all bread in a greased 9”x13” baking dish. Pour custard liqu_id evenly and gently press bread down to ensure all pieces are saturated.",
               image: ""
           },
           {
@@ -5826,9 +5828,9 @@ export const selectedRecipes = [
       _id: "6681b8d94507f78afe8018b3",
       context: "https://schema.org",
       type: "Recipe",
-      name: "Starbucks® Holiday Blend Café Au Lait with​ Cherry Almond Sweet Cream",
+      name: "Starbucks® Hol_iday Blend Café Au Lait with​ Cherry Almond Sweet Cream",
       image: "https://athome.starbucks.com/sites/default/files/2022-10/CAH%20CHERRY%20ALMOND%20SWEET%20CREAM%20-%20HEADER_0.jpg",
-      description: "Starbucks® Holiday Blend, cherry cream and just a hint of almond? Sounds like the perfect way to top off the holidays. From that first sip, this delightful holiday recipe will become the sensation of your season.",
+      description: "Starbucks® Hol_iday Blend, cherry cream and just a hint of almond? Sounds like the perfect way to top off the hol_idays. From that first sip, this delightful hol_iday recipe will become the sensation of your season.",
       recipeYield: "1 serving",
       datePublished: "Mon, 10/31/2022 - 20:10",
       prepTime: "PT6M",
@@ -5837,14 +5839,14 @@ export const selectedRecipes = [
           "0.5 cup heavy whipping cream",
           "3 Tbps maraschino cherry juice",
           "0.5 tsp almond extract",
-          "8 oz brewed Starbucks® Holiday Blend",
+          "8 oz brewed Starbucks® Hol_iday Blend",
           "4 oz whole milk"
       ],
       recipeInstructions: [
           {
               type: "HowToStep",
               name: "01",
-              text: "Combine heavy whipping cream, cherry juice and almond extract in a bowl. Whisk or blend with a mixer until very soft peaks form. Set the sweet cream aside.​",
+              text: "Combine heavy whipping cream, cherry juice and almond extract in a bowl. Whisk or blend with a mixer until very soft peaks form. Set the sweet cream as_ide.​",
               image: ""
           },
           {
@@ -5881,7 +5883,7 @@ export const selectedRecipes = [
       totalTime: "PT20M",
       recipeIngredient: [
           "4 envelopes  of gelatin",
-          "2 cups  water, divided",
+          "2 cups  water, div_ided",
           "4 cups sugar",
           "0.5 tsp  salt",
           "3 tsp  vanilla extract",
@@ -5891,7 +5893,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "01",
-              text: "Soak 4 envelopes of gelatin in 1 cup of cold water. Set aside.",
+              text: "Soak 4 envelopes of gelatin in 1 cup of cold water. Set as_ide.",
               image: "https://athome.starbucks.com/sites/default/files/2021-08/HomemadeMarshmallows_featuredImage.jpg"
           },
           {
@@ -5933,7 +5935,7 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "Vanilla Coffee Cheesecake​",
       image: "https://athome.starbucks.com/sites/default/files/2021-09/1_CAH_VanillaCoffeeCheesecake_Hdr_2880x1660_0.jpg",
-      description: "With sweet vanilla, rich coffee and luscious cream cheese, our Vanilla Coffee Cheesecake recipe is a perfect balance of complementary flavors. Enjoy alongside a cup of your favorite Starbucks® coffee for a perfectly delicious dessert.",
+      description: "With sweet vanilla, rich coffee and luscious cream cheese, our Vanilla Coffee Cheesecake recipe is a perfect balance of complementary flavors. Enjoy alongs_ide a cup of your favorite Starbucks® coffee for a perfectly delicious dessert.",
       recipeYield: "1",
       datePublished: "Wed, 09/08/2021 - 09:41",
       prepTime: "PT65M",
@@ -5951,7 +5953,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "01",
-              text: "Preheat oven to 325°F. Wrap the bottom and sides of the springform pan with foil to prevent water seepage when baking.",
+              text: "Preheat oven to 325°F. Wrap the bottom and s_ides of the springform pan with foil to prevent water seepage when baking.",
               image: ""
           },
           {
@@ -5963,7 +5965,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "03",
-              text: "Line 10-inch springform pan with crust mixture on the bottom, reserving about ¼ for along the sides. Pack firmly by pressing with hand.",
+              text: "Line 10-inch springform pan with crust mixture on the bottom, reserving about ¼ for along the s_ides. Pack firmly by pressing with hand.",
               image: ""
           },
           {
@@ -5987,7 +5989,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "07",
-              text: "Divide the batter in 2.",
+              text: "Div_ide the batter in 2.",
               image: ""
           },
           {
@@ -6409,31 +6411,31 @@ export const selectedRecipes = [
               type: "HowToStep",
               name: "01",
               text: "Start with adding dark chocolate sauce and toffee nut syrup to your cup.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-slide-02.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-sl_ide-02.jpg"
           },
           {
               type: "HowToStep",
               name: "02",
               text: "Add a pinch of sea salt.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-slide-03.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-sl_ide-03.jpg"
           },
           {
               type: "HowToStep",
               name: "03",
               text: "Pour in hot coffee and stir to dissolve.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-slide-04.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-sl_ide-04.jpg"
           },
           {
               type: "HowToStep",
               name: "04",
               text: "Add milk; cold is great, but hot is better.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-slide-05.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-sl_ide-05.jpg"
           },
           {
               type: "HowToStep",
               name: "05",
               text: "Top it off with whipped cream, caramel sauce and a sprinkle of sea salt.",
-              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-slide-06.jpg"
+              image: "https://athome.starbucks.com/sites/default/files/2021-06/salted-caramel-mocha-sl_ide-06.jpg"
           }
       ],
       category: "HOT BEVERAGES"
@@ -6504,7 +6506,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "02",
-              text: "Stir chocolate from outside edges of bowl to the center.",
+              text: "Stir chocolate from outs_ide edges of bowl to the center.",
               image: ""
           },
           {
@@ -6528,13 +6530,13 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "06",
-              text: "Keep stirring, using the residual heat of the bowl to finish.",
+              text: "Keep stirring, using the res_idual heat of the bowl to finish.",
               image: ""
           },
           {
               type: "HowToStep",
               name: "07",
-              text: "Using a pastry brush, spread a layer of chocolate inside each mold.",
+              text: "Using a pastry brush, spread a layer of chocolate ins_ide each mold.",
               image: "https://athome.starbucks.com/sites/default/files/2021-08/CaramelCoffeeBomb%E2%80%8BStep7.jpg"
           },
           {
@@ -6558,7 +6560,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "11",
-              text: "Fill 8 of the half-spheres with 1 oz of caramel each.​ For different flavors, try adding chocolate chips, caramel candy pieces, or butterscotch chips on the interior of the bombs. For a creamier coffee bomb, try adding a splash of your favorite liquid creamer; just be sure to enjoy immediately.",
+              text: "Fill 8 of the half-spheres with 1 oz of caramel each.​ For different flavors, try adding chocolate chips, caramel candy pieces, or butterscotch chips on the interior of the bombs. For a creamier coffee bomb, try adding a splash of your favorite liqu_id creamer; just be sure to enjoy immediately.",
               image: "https://athome.starbucks.com/sites/default/files/2021-08/CaramelCoffeeBombStep11.jpg"
           },
           {
@@ -6694,7 +6696,7 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "Fruit Crisp",
       image: "https://athome.starbucks.com/sites/default/files/2021-09/1_CAH_FruitCrisp_Hdr_2880x1660_0.jpg",
-      description: "Enjoy a sweet berry treat alongside your favorite Starbucks® coffee. Our comforting Fruit Crisp recipe pairs perfectly as a breakfast complement or an after-dinner dessert.",
+      description: "Enjoy a sweet berry treat alongs_ide your favorite Starbucks® coffee. Our comforting Fruit Crisp recipe pairs perfectly as a breakfast complement or an after-dinner dessert.",
       recipeYield: "1",
       datePublished: "Wed, 09/08/2021 - 10:26",
       prepTime: "PT35M",
@@ -6778,7 +6780,7 @@ export const selectedRecipes = [
       type: "Recipe",
       name: "NYE Iced Coffee Cocktail",
       image: "https://athome.starbucks.com/sites/default/files/2021-07/1_CAH_NYECocktail_Hdr_2880x16601.jpg",
-      description: "A glitzy holiday deserves a classy cocktail. Ring in the new year in style with this smoky-sweet French Roast cocktail with a hint of bright citrus.",
+      description: "A glitzy hol_iday deserves a classy cocktail. Ring in the new year in style with this smoky-sweet French Roast cocktail with a hint of bright citrus.",
       recipeYield: "1 serving",
       datePublished: "Tue, 07/06/2021 - 11:12",
       prepTime: "PT5M",
@@ -6801,7 +6803,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "02",
-              text: "Chill the coffee in the fridge.",
+              text: "Chill the coffee in the fr_idge.",
               image: ""
           },
           {
@@ -6889,7 +6891,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "07",
-              text: "Crack an egg into the simmering water and cook for approx. 4 minutes. The yolk should still be soft with the outside white set.",
+              text: "Crack an egg into the simmering water and cook for approx. 4 minutes. The yolk should still be soft with the outs_ide white set.",
               image: ""
           },
           {
@@ -6958,7 +6960,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "04",
-              text: "Bake for 30 minutes or until the center is soft and outside crispy.",
+              text: "Bake for 30 minutes or until the center is soft and outs_ide crispy.",
               image: ""
           },
           {
@@ -6988,7 +6990,7 @@ export const selectedRecipes = [
           {
               type: "HowToStep",
               name: "09",
-              text: "Add the egg mixture and cook on the stovetop until the outside edges solidify. Place in the oven and bake until the center is firm.",
+              text: "Add the egg mixture and cook on the stovetop until the outs_ide edges sol_idify. Place in the oven and bake until the center is firm.",
               image: ""
           },
           {

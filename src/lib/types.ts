@@ -12,19 +12,14 @@ export const initialState: State = {
 }
 
 
-interface RecipeIngredient {
-  quantity: string;
-  ingredient: string;
-}
-
-interface RecipeInstruction {
+export interface HowToStep {
   type: string;
   name: string;
   text: string;
   image: string;
 }
 
-export interface Recipe {
+export interface Coffee {
   _id: string;
   context: string;
   type: string;
@@ -35,7 +30,8 @@ export interface Recipe {
   datePublished: string;
   prepTime: string;
   totalTime: string;
-  recipeIngredient: RecipeIngredient[];
-  recipeInstructions: RecipeInstruction[];
+  recipeIngredient: string[];
+  recipeInstructions: HowToStep[];
   category: string;
 }
+

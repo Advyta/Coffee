@@ -3,10 +3,9 @@ import React, { useEffect, useState } from 'react'
 import bgTwo from '../../assets/StockSnap_KJADY7BD18_.jpg'
 import bgTwo_mob from '../../assets/pexels-jamalyahyayev-4085294.jpg'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import { fetchRecipes } from '@/lib/features/recipies/recipiesSlice';
-import { Recipe } from '@/lib/types';
+import { StarbucksCoffee } from '@/lib/StarbucksCoffee';
 
-const selectedRecipeNames: {
+const selectedRecipes: {
   id: string
   offset: number
 }[] = [
@@ -19,9 +18,6 @@ const selectedRecipeNames: {
 function RecipeSection() {
   const [bgImage, setBgImage] = useState(bgTwo.src);
   const [aspectRatio, setAspectRatio] = useState('16 / 9');
-  // const dispatch = useAppDispatch();
-  // const recipes = useAppSelector((state) => state.recipes);
-  // const status = useAppSelector((state) => state.status)
 
   useEffect(() => {
     const updateBackground = () => {
@@ -40,11 +36,9 @@ function RecipeSection() {
     }
   }, [])
 
-  // useEffect(() => {
-  //   selectedRecipeNames.forEach((recipe) => {
-  //     dispatch(fetchRecipes(recipe.id))
-  //   })
-  // }, [dispatch])
+  useEffect(() => {
+    const displayRecipes = selectedRecipes.forEach((recipe) => StarbucksCoffee.find((coffeeId) => coffeeId._id === recipe.id))
+  }, [])
 
   return (
     <div className='relative w-full bg-cover snap-center snap-always'
@@ -61,32 +55,11 @@ function RecipeSection() {
           <h2 className='heading-2 mx-16 px-3 py-2 rounded-xl capitalize backdrop-blur-sm bg-background-35'>Discover the most Popular Coffee Recipes</h2>
         </ParallaxLayer>
 
-        {/* {status === 'loading' && <div>Loading...</div>}
-        {status === 'failed' && <div>Failed to load recipes.</div>}
-        {status === 'succeeded' && selectedRecipeNames.map((recipe) => {
-          const currentRecipe: Recipe = recipes.find((r: Recipe) => r._id === recipe.id);
-          return (
-            <ParallaxLayer key={recipe.id} offset={recipe.offset} speed={1.5} className='flex items-center md:justify-end snap-normal snap-start'>
-              <div className='bg-background-35 p-16 md:mr-20'>
-                {currentRecipe ? (
-                  <>
-                    <h3>{currentRecipe.name}</h3>
-                     <p>{currentRecipe.description}</p> 
-                  </>
-                ) : (
-                  <p>Recipe not found</p>
-                )}
-              </div>
-            </ParallaxLayer>
-          );
-        })} */}
-
         <ParallaxLayer offset={0} speed={1.5} className='flex text-center items-center md:justify-end  snap-normal snap-start'>
           <div className='bg-background-35 w-72 px-16 py-28 md:mr-20'>
             Card 1
           </div>
         </ParallaxLayer>
-
         <ParallaxLayer offset={1} speed={1.5} className='flex text-center items-center md:justify-end  snap-normal snap-start'>
           <div className='bg-background-35 w-72 px-16 py-28 md:mr-20'>
             Card 2
