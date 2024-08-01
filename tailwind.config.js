@@ -17,7 +17,9 @@ module.exports = {
         'background-40': 'oklch(13.35% 0.041 45.95 / 40%)',
         'inactive-text': 'oklch(80% 0.02 90)',
         'active-text': 'oklch(95% 0.02 90)',
-        'dark-text': 'oklch(10% 0.05 270',
+        'dark-text': 'oklch(10% 0.05 270)',
+        'cta-color': 'oklch(56.5% 0.04 45.95)',
+        'button-color': 'oklch(80% 0.05 80)'
       },
       fontFamily: {
         lato: ['Lato', "sans-serif"]
@@ -64,12 +66,12 @@ module.exports = {
         '.body-m': {
           fontFamily: 'lato',
           fontSize: 'clamp(0.875rem, 0.172vw + 0.835rem, 1rem)',
-          letterSpacing: '0.035px',
+          letterSpacing: '0.035em',
         },
         '.body-s': {
           fontFamily: 'lato',
           fontSize: 'clamp(0.75rem, 0.172vw + 0.71rem, 0.875rem)',
-          letterSpacing: '0.048px',
+          letterSpacing: '0.048em',
         },
       })
     }),
