@@ -3,10 +3,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
-config.autoAddCss = false
 import StoreProvider from "./StoreProvider";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+
+config.autoAddCss = false
 
 const inter = Inter({ subsets: ["latin"] });
 

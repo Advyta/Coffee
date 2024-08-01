@@ -19,7 +19,7 @@ export const fetchRecipes = createAsyncThunk('recipies/fetchRecipies', async (id
   
   try {
     const response = await axios.request(options);
-    console.log(response.data);
+    // console.log(response.data);
     return response.data;
 
   } catch (error) {
