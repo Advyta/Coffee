@@ -11,18 +11,10 @@ export const initialState: State = {
   error: null
 }
 
-
-export interface HowToStep {
-  type: string;
-  name: string;
-  text: string;
-  image: string;
-}
-
-export interface Coffee {
+export interface Coffee  {
   _id: string;
-  context: string;
-  type: string;
+  "@context": string;
+  "@type": string;
   name: string;
   image: string;
   description: string;
@@ -31,7 +23,12 @@ export interface Coffee {
   prepTime: string;
   totalTime: string;
   recipeIngredient: string[];
-  recipeInstructions: HowToStep[];
+  recipeInstructions: {
+      "@type": string;
+      name: string;
+      text: string;
+      image: string;
+  }[];
   category: string;
-}
+}[]
 

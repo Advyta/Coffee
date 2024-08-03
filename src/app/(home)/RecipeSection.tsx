@@ -2,10 +2,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import bgTwo from '../../assets/StockSnap_KJADY7BD18_.jpg'
 import bgTwo_mob from '../../assets/pexels-jamalyahyayev-4085294.jpg'
-import { StarbucksCoffee } from '@/lib/StarbucksCoffee';
 import { Coffee } from '@/lib/types';
 import gsap from 'gsap';
 import Button from '@/components/Button/Button';
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
+import { fetchRecipes } from '@/lib/features/recipies/recipiesSlice';
 
 const selectedRecipes: {
   id: string
@@ -23,6 +24,13 @@ function RecipeSection() {
   const headingRef = useRef(null);
   const cardRef = useRef(null);
   const sectionRef = useRef(null);
+
+  const dispatch = useAppDispatch();
+  const recipeData: Coffee[] = useAppSelector((state) => state.recipes);
+
+  useEffect(() => {
+    dispatch(fetchRecipes(""));
+  }, [dispatch]);
 
   useEffect(() => {
     const updateBackground = () => {
@@ -43,7 +51,7 @@ function RecipeSection() {
 
   useEffect(() => {
     const displayRecipes: Coffee[] = selectedRecipes.map((recipe) => {
-      return StarbucksCoffee.find((coffee) => coffee._id === recipe.id);
+      return recipeData.find((coffee) => coffee._id === recipe.id);
     }).filter(Boolean) as Coffee[];
     setRecipes(displayRecipes);
   }, [])

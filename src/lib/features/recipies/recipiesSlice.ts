@@ -5,16 +5,7 @@ import axios from 'axios'
 export const fetchRecipes = createAsyncThunk('recipies/fetchRecipies', async (id: string | null) => {
   const options = {
     method: 'GET',
-    url: 'https://starbucks-coffee-db2.p.rapidapi.com/api/recipes',
-    params: {
-      id: `${id}` || null,
-      name: '',
-      category: '',
-    },
-    headers: {
-      'x-rapidapi-key': 'ef449b63a2mshcc35d86c6df7536p1a0980jsn584ee2e6c6fe',
-      'x-rapidapi-host': 'starbucks-coffee-db2.p.rapidapi.com'
-    }
+    url: '/api/coffeeData',
   };
   
   try {
