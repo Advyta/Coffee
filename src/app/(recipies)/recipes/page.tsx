@@ -3,32 +3,28 @@
 import React, { useEffect } from "react";
 import { fetchRecipes } from "@/lib/features/recipies/recipiesSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { Coffee } from "@/lib/types";
+import { Coffee, State } from "@/lib/types";
+import RecipeCard from "./RecipeCard";
+import CardPlaceholder from "./CardPlaceholder";
 
 export default function Recipes() {
   const dispatch = useAppDispatch();
-  const recipes: Coffee[] = useAppSelector((state) => state.recipes);
+  const state: State = useAppSelector((state) => state.recipes);
+  const recipes = state.recipes;
 
   useEffect(() => {
-    dispatch(fetchRecipes(""));
+    dispatch(fetchRecipes({ category: "ICED BEVERAGES" }));
   }, [dispatch]);
 
-  if (!recipes || recipes.length === 0) {
-    return (
-      <div className="flex justify-center items-center pt-20">Loading...</div>
-    );
-  } else {
-    return (
-      <div className="py-16 mx-16">
-        <h2 className="heading-3 capitalize">
-          Discover the most Popular Coffee Recipies
-        </h2>
-        <ul>
-          {recipes.map((recipe) => (
-            <li key={recipe._id}>{recipe.name}</li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
+  return (
+    <div className="py-16 md:mx-16 mx-4">
+      <h2 className="md:pt-6 heading-3 capitalize text-center">
+        Discover the most Popular Coffee Recipies
+      </h2>
+      {/* <CardPlaceholder /> */}
+      {state.status === "loading" && <CardPlaceholder />}
+      {state.status === "succeeded" && <RecipeCard recipes={recipes} />}
+      {state.error && <p>Failed to fetch Recipes</p>}
+    </div>
+  );
 }

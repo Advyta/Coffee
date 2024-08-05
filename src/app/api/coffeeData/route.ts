@@ -6,9 +6,24 @@ import { NextRequest, NextResponse } from "next/server";
 export async function GET(req: NextRequest) {
   try {
     await connect();
-    const coffeeData = await CoffeeRecipe.find({});
-    // console.log(coffeeData);
-    
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
+    const name = searchParams.get("name");
+    const category = searchParams.getAll("category");
+
+    let query: any = {};
+    if (id) {
+      query._id = id;
+    }
+    if (name) {
+      query.name = new RegExp(name, "i");
+    }
+    if (category) {
+      query.category = category;
+    }
+
+    const coffeeData = await CoffeeRecipe.find(query);
+
     return NextResponse.json(coffeeData, { status: 200 });
   } catch (error) {
     console.error("Error fetching coffee data:", error);

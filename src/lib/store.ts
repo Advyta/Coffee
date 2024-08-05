@@ -3,12 +3,16 @@ import recipesReducer from './features/recipies/recipiesSlice'
 
 export const makeStore = () => {
   return configureStore({
-    reducer: recipesReducer,
+    reducer: {
+      recipes: recipesReducer,
+    },
   })
 }
 
-export type AppStore = ReturnType<typeof makeStore>
-export type RootState = ReturnType<AppStore['getState']>
-export type AppDispatch = AppStore['dispatch']
+const store = makeStore();
 
-export default makeStore;
+export type AppStore = typeof store;
+export type RootState = ReturnType<AppStore['getState']>;
+export type AppDispatch = AppStore['dispatch'];
+
+export default store;

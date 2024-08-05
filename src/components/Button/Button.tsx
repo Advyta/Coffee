@@ -15,7 +15,7 @@ const Button: React.FC<ButtonProps> = ({content}) => {
 
     const hoverEnter = () => {
       gsap.to(button, {
-        duration: 0.4,
+        duration: 0.3,
         backgroundColor: 'oklch(13.35% 0.041 45.95)',
         color: 'oklch(95% 0.02 90)',
         scale: 1.1,
@@ -26,10 +26,10 @@ const Button: React.FC<ButtonProps> = ({content}) => {
 
     const hoverLeave = () => {
       gsap.to(button, {
-        duration: 0.4,
+        duration: 0.3,
         backgroundColor: 'oklch(80% 0.05 80)',
         color: 'oklch(10% 0.05 270)', 
-        scale: 1.1,
+        scale: 1,
         ease: 'power1.in'
       });
     };    
@@ -46,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({content}) => {
   }, [])
 
   return (
-    <button ref={buttonRef} className='text-dark-text bg-button-color body-m px-3 py-1 mt-2 rounded-full min-w-4 hover:text-active-text font-semibold'>
+    <button ref={buttonRef} className='text-dark-text bg-button-color body-m px-3 py-1 mt-2 rounded-full min-w-4 hover:text-active-text '>
       {content}
     </button>
   )

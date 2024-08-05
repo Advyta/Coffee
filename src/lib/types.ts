@@ -1,7 +1,7 @@
 
-interface State {
+export interface State {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
-  recipes: []; 
+  recipes: Coffee[]; 
   error: string | null;
 }
 
