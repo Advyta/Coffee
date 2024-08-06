@@ -1,9 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig =  {
+const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['athome.starbucks.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'athome.starbucks.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
 export default nextConfig;
+

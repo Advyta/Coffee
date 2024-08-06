@@ -20,7 +20,8 @@ module.exports = {
         'active-text': 'oklch(95% 0.02 90)',
         'dark-text': 'oklch(10% 0.05 270)',
         'cta-color': 'oklch(56.5% 0.04 45.95)',
-        'button-color': 'oklch(80% 0.05 80)'
+        'button-color': 'oklch(80% 0.05 80)',
+        'placeholder': 'oklch(80% 0.05 80 / 50%)'
       },
       fontFamily: {
         lato: ['Lato', "sans-serif"]

@@ -7,6 +7,8 @@ import gsap from "gsap";
 import Button from "@/components/Button/Button";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { fetchRecipes } from "@/lib/features/recipies/recipiesSlice";
+import CardPlaceholder from "../(recipies)/recipes/CardPlaceholder";
+import RecipeCard from "../(recipies)/recipes/RecipeCard";
 
 const selectedRecipes: string[] = [
   "6681b8d94507f78afe801843",
@@ -119,10 +121,16 @@ function RecipeSection() {
           </h2>
         </div>
 
-        <div
+        <div ref={cardRef}>
+          <RecipeCard recipes={recipes} />
+          {error && <p>Failed to fetch Recipes</p>}
+        </div>
+
+        {/* <div
           ref={cardRef}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 mt-5 p-4"
         >
+
           {recipes.map((recipe) => (
             <div key={recipe._id} className="justify-self-center">
               <div className="flex flex-col gap-4 lg:gap-8 sm:flex-row bg-background-40 backdrop-blur-sm px-8 py-6 lg:px-14 md:py-9 rounded-xl max-w-xl justify-center">
@@ -140,7 +148,7 @@ function RecipeSection() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

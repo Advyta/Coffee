@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Recipie = () => {
+const Recipe = ({params}: any) => {
   return (
     <div>
-      Recipie
+      Recipe {params}
     </div>
   )
 }
 
-export default Recipie
+export default Recipe
