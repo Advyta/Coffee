@@ -12,9 +12,7 @@ export default function Recipes() {
   const dispatch = useAppDispatch();
   const state: State = useAppSelector((state) => state.recipes);
   const recipes = state.recipes;
-  const [selectedCategory, setSelectedCategory] = useState<string>(() => {
-    return localStorage.getItem("selectedCategory") || "ICED BEVERAGES";
-  });
+  const [selectedCategory, setSelectedCategory] = useState<string>("ICED BEVERAGES");
 
   const categories: string[] = [
     "ICED BEVERAGES",
@@ -31,6 +29,16 @@ export default function Recipes() {
   useEffect(() => {
     localStorage.setItem("selectedCategory", selectedCategory);
   }, [selectedCategory]);
+
+  useEffect(() => {
+    // Check if window is defined (i.e., running in the browser)
+    if (typeof window !== 'undefined') {
+      const storedCategory = localStorage.getItem("selectedCategory");
+      if (storedCategory) {
+        setSelectedCategory(storedCategory);
+      }
+    }
+  }, []);
 
   const handleCategoryClick = (category: string) => {
     setSelectedCategory(category);

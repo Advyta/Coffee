@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({ content, onClick, activated }) => {
           duration: 0.3,
           backgroundColor: "oklch(32% 0.041 45.95)",
           color: "oklch(95% 0.02 90)",
-          scale: 1.1,
+          scale: 1,
           ease: "power1.in",
           fontWeight: 500,
         });
