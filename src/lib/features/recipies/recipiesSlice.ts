@@ -4,12 +4,14 @@ import axios from "axios";
 
 export const fetchRecipes = createAsyncThunk(
   "recipies/fetchRecipies",
-  async (params: { id?: string; name?: string; category?: string }) => {
-    const { id, name, category } = params;
+  async (params: { id?: string; name?: string; category?: string, page?: number, limit?: number  }) => {
+    const { id, name, category, page, limit } = params;
     const url = new URL("/api/coffeeData", window.location.origin);
     if (id) url.searchParams.append("id", id);
     if (name) url.searchParams.append("name", name);
     if (category) url.searchParams.append("category", category);
+    if (page) url.searchParams.append("page", page.toString());
+    if (limit) url.searchParams.append("limit", limit.toString());
 
     try {
       const response = await axios.get(url.toString());
@@ -33,8 +35,8 @@ const recipesSlice = createSlice({
       })
       .addCase(fetchRecipes.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.recipes = action.payload;
-        // console.log(action.payload);
+        state.recipes = action.payload.data;
+        state.pagination = action.payload.pagination || { totalItems: 0, totalPages: 1, currentPage: 1, itemsPerPage: 10 };
         state.error = null;
       })
       .addCase(fetchRecipes.rejected, (state, action) => {

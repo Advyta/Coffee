@@ -12,7 +12,7 @@ interface RecipeCardProps {
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipes }) => {
   const pathname = usePathname();
   const router = useRouter();
-
+  
   const handleReadRecipeClick = (recipeId: string) => {
     router.push(`/recipe/${recipeId}`);
   };

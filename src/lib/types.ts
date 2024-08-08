@@ -1,13 +1,21 @@
+export interface Pagination {
+  totalItems: number;
+  totalPages: number;
+  currentPage: number;
+  itemsPerPage: number;
+}
 
 export interface State {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   recipes: Coffee[]; 
+  pagination: Pagination;
   error: string | null;
 }
 
 export const initialState: State = {
   recipes: [],
   status: 'idle',
+  pagination: { totalItems: 0, totalPages: 1, currentPage: 1, itemsPerPage: 10 },
   error: null
 }
 

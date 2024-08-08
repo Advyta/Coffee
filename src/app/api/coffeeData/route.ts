@@ -10,6 +10,8 @@ export async function GET(req: NextRequest) {
     const id = searchParams.get("id");
     const name = searchParams.get("name");
     const category = searchParams.getAll("category");
+    const page = parseInt(searchParams.get("page") || "1", 10);
+    const limit = parseInt(searchParams.get("limit") || "0", 10);
 
     let query: any = {};
     if (id) {
@@ -18,13 +20,35 @@ export async function GET(req: NextRequest) {
     if (name) {
       query.name = new RegExp(name, "i");
     }
-    if (category) {
-      query.category = category;
+    if (category.length > 0) {
+      query.category = { $in: category };
     }
 
-    const coffeeData = await CoffeeRecipe.find(query);
+    let coffeeData;
+    if (limit > 0) {
+      const skip = (page - 1) * limit;
+      coffeeData = await CoffeeRecipe.find(query).skip(skip).limit(limit);
+    } else {
+      coffeeData = await CoffeeRecipe.find(query);
+    }
 
-    return NextResponse.json(coffeeData, { status: 200 });
+    // const skip = (page - 1) * limit;
+    // const coffeeData = await CoffeeRecipe.find(query).skip(skip).limit(limit);
+    const totalItems = await CoffeeRecipe.countDocuments(query);
+    const totalPages = limit > 0 ? Math.ceil(totalItems / limit) : 1;
+
+    return NextResponse.json(
+      {
+        data: coffeeData,
+        pagination: {
+          totalItems,
+          totalPages,
+          currentPage: page,
+          itemsPerPage: limit > 0 ? limit : totalItems,
+        },
+      },
+      { status: 200 }
+    );
   } catch (error) {
     console.error("Error fetching coffee data:", error);
     return NextResponse.json(
