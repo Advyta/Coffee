@@ -7,15 +7,22 @@ export const fetchRecipes = createAsyncThunk(
   async (params: { id?: string; name?: string; category?: string, page?: number, limit?: number  }) => {
     const { id, name, category, page, limit } = params;
     const url = new URL("/api/coffeeData", window.location.origin);
-    if (id) url.searchParams.append("id", id);
-    if (name) url.searchParams.append("name", name);
-    if (category) url.searchParams.append("category", category);
-    if (page) url.searchParams.append("page", page.toString());
-    if (limit) url.searchParams.append("limit", limit.toString());
+    if (id) {
+      // Fetch a single recipe by ID
+      url.pathname = `/api/coffeeData/${id}`;
+    } else {
+      // Fetch recipes with filters
+      if (name) url.searchParams.append("name", name);
+      if (category) url.searchParams.append("category", category);
+      if (page) url.searchParams.append("page", page.toString());
+      if (limit) url.searchParams.append("limit", limit.toString());
+    }
 
     try {
       const response = await axios.get(url.toString());
-      // console.log(response.data);
+      if (!response.data) {
+        throw new Error('No data found in the response');
+      }
       return response.data;
     } catch (error) {
       console.error(error);
