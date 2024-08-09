@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { fetchRecipes } from "@/lib/features/recipies/recipiesSlice";
+import { fetchRecipes } from "@/lib/features/recipes/recipesSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { State } from "@/lib/types";
 import RecipeCard from "./RecipeCard";

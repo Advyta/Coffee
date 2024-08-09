@@ -8,6 +8,7 @@ export interface Pagination {
 export interface State {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   recipes: Coffee[]; 
+  currentRecipe: Coffee | null,
   pagination: Pagination;
   error: string | null;
 }
@@ -15,6 +16,7 @@ export interface State {
 export const initialState: State = {
   recipes: [],
   status: 'idle',
+  currentRecipe: null,
   pagination: { totalItems: 0, totalPages: 1, currentPage: 1, itemsPerPage: 10 },
   error: null
 }

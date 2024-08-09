@@ -6,7 +6,7 @@ import { Coffee } from "@/lib/types";
 import gsap from "gsap";
 import Button from "@/components/Button/Button";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { fetchRecipes } from "@/lib/features/recipies/recipiesSlice";
+import { fetchRecipes } from "@/lib/features/recipes/recipesSlice";
 import CardPlaceholder from "../(recipies)/recipes/CardPlaceholder";
 import RecipeCard from "../(recipies)/recipes/RecipeCard";
 

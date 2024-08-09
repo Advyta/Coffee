@@ -14,7 +14,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipes }) => {
   const router = useRouter();
   
   const handleReadRecipeClick = (recipeId: string) => {
-    router.push(`/recipe/${recipeId}`);
+    router.push(`/recipes/${recipeId}`);
   };
 
   return (
