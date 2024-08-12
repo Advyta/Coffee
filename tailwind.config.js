@@ -36,6 +36,9 @@ module.exports = {
       height: {
         "1/15": "15%",
       },
+      listStyleImage: {
+        coffeeBean: 'url("/src/app/assets/coffee-bean.png")'
+      },
     },
   },
   daisyui: {

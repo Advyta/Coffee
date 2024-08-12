@@ -1,0 +1,17 @@
+/* Increase the size of the circle */
+.custom-step::after {
+  width: 2.5rem !important; /* Adjust the size */
+  height: 2.5rem !important; /* Adjust the size */
+  font-size: larger;
+}
+
+.steps-vertical .step:before {
+  width: 0.35rem !important;
+}
+
+@media screen and (max-width: 640px) {
+  .custom-step::after {
+    width: 2rem !important; /* Adjust the size */
+    height: 2rem !important; /* Adjust the size */
+  }
+}
