@@ -46,16 +46,17 @@ const recipesSlice = createSlice({
       .addCase(fetchRecipes.fulfilled, (state, action) => {
         state.status = "succeeded";
         if (action.meta.arg.id) {
-          state.currentRecipe = action.payload.data[0];
+          state.currentRecipe = action.payload.data[0] || null;
+        } else {
+          state.recipes = action.payload.data || [];
+          state.pagination = action.payload.pagination || {
+            totalItems: 0,
+            totalPages: 1,
+            currentPage: 1,
+            itemsPerPage: 10,
+          };
+          state.error = null;
         }
-        state.recipes = action.payload.data || [];
-        state.pagination = action.payload.pagination || {
-          totalItems: 0,
-          totalPages: 1,
-          currentPage: 1,
-          itemsPerPage: 10,
-        };
-        state.error = null;
       })
       .addCase(fetchRecipes.rejected, (state, action) => {
         state.status = "failed";

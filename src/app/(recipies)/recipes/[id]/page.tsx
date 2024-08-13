@@ -1,11 +1,12 @@
 "use client";
 
-import { useAppSelector } from "@/lib/hooks";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import PrepTime from "@/components/PrepTime/PrepTime";
 import coffee from "@/assets/coffee-bean.png";
 import RecipeSteps from "./RecipeSteps";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { fetchRecipes } from "@/lib/features/recipes/recipesSlice";
 
 interface RecipePageProps {
   params: {
@@ -15,10 +16,22 @@ interface RecipePageProps {
 
 const Recipe: React.FC<RecipePageProps> = ({ params }) => {
   const { id } = params;
+  const dispatch = useAppDispatch();
+  const recipeState = useAppSelector((state) => state.recipes);
 
-  const recipes = useAppSelector((state) => state.recipes.recipes);
-  const selectedRecipe = recipes.find((recipe) => recipe._id === id);
-  if (!selectedRecipe)
+  const selectedRecipe = recipeState.currentRecipe;
+
+  useEffect(() => {
+    if (id) {
+      dispatch(fetchRecipes({ id }));
+    }
+  }, [dispatch, id]);
+
+  if (recipeState.status === "loading") {
+    return <p className="py-16 sm:mx-16 mx-6">Loading...</p>;
+  }
+
+  if (recipeState.status === "failed" || !selectedRecipe)
     return <p className="py-16 sm:mx-16 mx-6">No recipe found</p>;
 
   return (
@@ -67,5 +80,4 @@ const Recipe: React.FC<RecipePageProps> = ({ params }) => {
     </div>
   );
 };
-
 export default Recipe;

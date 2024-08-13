@@ -1,6 +1,7 @@
 import { connect } from "@/dbConfig/dbConfig";
 import CoffeeRecipe from "@/models/RecipeSchema";
 import { NextRequest, NextResponse } from "next/server";
+import { ObjectId } from "mongodb";
 
 // Handler for GET request
 export async function GET(req: NextRequest) {
@@ -12,10 +13,11 @@ export async function GET(req: NextRequest) {
     const category = searchParams.getAll("category");
     const page = parseInt(searchParams.get("page") || "1", 10);
     const limit = parseInt(searchParams.get("limit") || "0", 10);
+    console.log("Received ID:", id);
 
     let query: any = {};
     if (id) {
-      query._id = id;
+      query._id = id.trim();
     }
     if (name) {
       query.name = new RegExp(name, "i");
@@ -23,6 +25,8 @@ export async function GET(req: NextRequest) {
     if (category.length > 0) {
       query.category = { $in: category };
     }
+
+    console.log("Querying with:", query);
 
     let coffeeData;
     if (limit > 0) {
@@ -32,8 +36,8 @@ export async function GET(req: NextRequest) {
       coffeeData = await CoffeeRecipe.find(query);
     }
 
-    // const skip = (page - 1) * limit;
-    // const coffeeData = await CoffeeRecipe.find(query).skip(skip).limit(limit);
+    console.log("Database Response:", coffeeData);
+
     const totalItems = await CoffeeRecipe.countDocuments(query);
     const totalPages = limit > 0 ? Math.ceil(totalItems / limit) : 1;
 

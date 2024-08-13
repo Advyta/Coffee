@@ -5,7 +5,7 @@ const InstructionSchema = new Schema({
   name: { type: String, required: [true, 'Instruction name is required'] },
   text: { type: String, required: [true, 'Instruction text is required'] },
   image: { type: String, required: false }
-}, { _id: false });
+});
 
 const RecipeSchema = new Schema({
   "@context": { type: String, required: true },
@@ -22,6 +22,6 @@ const RecipeSchema = new Schema({
   category: { type: String, required: [true, 'Category is required'], index: true },
 }, { timestamps: true });
 
-const CoffeeRecipe = models.CoffeeRecipe || model('CoffeeRecipe', RecipeSchema);
+const CoffeeRecipe = models.coffeerecipes || model('coffeerecipes', RecipeSchema);
 
 export default CoffeeRecipe;
