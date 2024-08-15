@@ -14,8 +14,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipes }) => {
   const router = useRouter();
   
   const handleReadRecipeClick = (recipeName: string) => {
-    const sanitizedRecipeName = recipeName.replace(/\u200B/g, "").replace(/\u00A0/g, ' '); 
-    const encodedName = encodeURIComponent(sanitizedRecipeName).replace(/%C2%A0/g, '%20'); // Encode the name before using in URL
+    const encodedName = encodeURIComponent(recipeName);
     router.push(`/recipes/${encodedName}`);
     console.log('Navigating to recipe:', encodedName);
   };

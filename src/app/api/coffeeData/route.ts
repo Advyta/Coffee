@@ -2,13 +2,6 @@ import { connect } from "@/dbConfig/dbConfig";
 import CoffeeRecipe from "@/models/RecipeSchema";
 import { NextRequest, NextResponse } from "next/server";
 
-function sanitizeString(str: string): string {
-  return str
-    .replace(/\u00A0/g, " ") // Replace non-breaking spaces with regular spaces
-    .replace(/\u200B/g, "") // Remove zero-width spaces
-    .trim(); // Trim leading/trailing whitespace
-}
-
 // Handler for GET request
 export async function GET(req: NextRequest) {
   try {
@@ -20,7 +13,7 @@ export async function GET(req: NextRequest) {
     const page = parseInt(searchParams.get("page") || "1", 10);
     const limit = parseInt(searchParams.get("limit") || "0", 10);
 
-    name = sanitizeString(decodeURIComponent(name));
+    name = decodeURIComponent(name);
     // console.log("Recieced, Sanitized and Decoded name: ", name);
 
     let query: any = {};
