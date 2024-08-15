@@ -1,7 +1,13 @@
 import { connect } from "@/dbConfig/dbConfig";
 import CoffeeRecipe from "@/models/RecipeSchema";
 import { NextRequest, NextResponse } from "next/server";
-import { ObjectId } from "mongodb";
+
+function sanitizeString(str: string): string {
+  return str
+    .replace(/\u00A0/g, " ") // Replace non-breaking spaces with regular spaces
+    .replace(/\u200B/g, "") // Remove zero-width spaces
+    .trim(); // Trim leading/trailing whitespace
+}
 
 // Handler for GET request
 export async function GET(req: NextRequest) {
@@ -9,11 +15,13 @@ export async function GET(req: NextRequest) {
     await connect();
     const { searchParams } = new URL(req.url);
     const id = searchParams.get("id");
-    const name = searchParams.get("name");
+    let name = searchParams.get("name") || "";
     const category = searchParams.getAll("category");
     const page = parseInt(searchParams.get("page") || "1", 10);
     const limit = parseInt(searchParams.get("limit") || "0", 10);
-    console.log("Received ID:", id);
+
+    name = sanitizeString(decodeURIComponent(name));
+    // console.log("Recieced, Sanitized and Decoded name: ", name);
 
     let query: any = {};
     if (id) {
@@ -26,7 +34,7 @@ export async function GET(req: NextRequest) {
       query.category = { $in: category };
     }
 
-    console.log("Querying with:", query);
+    // console.log("Querying with:", query);
 
     let coffeeData;
     if (limit > 0) {

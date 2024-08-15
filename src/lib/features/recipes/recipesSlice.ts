@@ -1,6 +1,19 @@
-import { initialState } from "@/lib/types";
+import { Coffee, State } from "@/lib/types";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+
+export const initialState: State = {
+  recipes: [],
+  status: "idle",
+  currentRecipe: null,
+  pagination: {
+    totalItems: 0,
+    totalPages: 1,
+    currentPage: 1,
+    itemsPerPage: 10,
+  },
+  error: null,
+};
 
 export const fetchRecipes = createAsyncThunk(
   "recipes/fetchRecipes",
@@ -15,7 +28,7 @@ export const fetchRecipes = createAsyncThunk(
     let url = new URL("/api/coffeeData", window.location.origin);
 
     if (id) url.searchParams.append("id", id);
-    if (name) url.searchParams.append("name", name);
+    if (name) url.searchParams.append("name", decodeURIComponent(name));
     if (category) url.searchParams.append("category", category);
     if (page) url.searchParams.append("page", page.toString());
     if (limit) url.searchParams.append("limit", limit.toString());
@@ -45,7 +58,17 @@ const recipesSlice = createSlice({
       })
       .addCase(fetchRecipes.fulfilled, (state, action) => {
         state.status = "succeeded";
-        if (action.meta.arg.id) {
+
+        const decodedName = action.meta.arg.name
+          ? decodeURIComponent(action.meta.arg.name)
+          : null;
+
+        if (decodedName) {
+          state.currentRecipe =
+            action.payload.data.find(
+              (recipe: Coffee) => recipe.name === decodedName
+            ) || null;
+        } else if (action.meta.arg.id) {
           state.currentRecipe = action.payload.data[0] || null;
         } else {
           state.recipes = action.payload.data || [];
@@ -55,8 +78,8 @@ const recipesSlice = createSlice({
             currentPage: 1,
             itemsPerPage: 10,
           };
-          state.error = null;
         }
+        state.error = null;
       })
       .addCase(fetchRecipes.rejected, (state, action) => {
         state.status = "failed";
@@ -64,5 +87,4 @@ const recipesSlice = createSlice({
       });
   },
 });
-
 export default recipesSlice.reducer;

@@ -35,8 +35,8 @@ const RecipeSteps: React.FC<stepsProps> = ({ steps }) => {
                     alt={step.name}
                     placeholder="empty"
                     loading="lazy"
-                    width={250}
-                    height={144}
+                    width={256}
+                    height={154}
                     className="rounded-md basis-1/4 flex"
                   />
                 )}

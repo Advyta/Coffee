@@ -13,8 +13,11 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipes }) => {
   const pathname = usePathname();
   const router = useRouter();
   
-  const handleReadRecipeClick = (recipeId: string) => {
-    router.push(`/recipes/${recipeId}`);
+  const handleReadRecipeClick = (recipeName: string) => {
+    const sanitizedRecipeName = recipeName.replace(/\u200B/g, "").replace(/\u00A0/g, ' '); 
+    const encodedName = encodeURIComponent(sanitizedRecipeName).replace(/%C2%A0/g, '%20'); // Encode the name before using in URL
+    router.push(`/recipes/${encodedName}`);
+    console.log('Navigating to recipe:', encodedName);
   };
 
   return (
@@ -45,7 +48,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipes }) => {
               </div>
               <Button
                 content={"Read The Recipe"}
-                onClick={() => handleReadRecipeClick(recipe._id)}
+                onClick={() => handleReadRecipeClick(recipe.name)}
               />
             </div>
           </div>

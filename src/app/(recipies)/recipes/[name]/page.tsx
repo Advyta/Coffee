@@ -7,32 +7,45 @@ import coffee from "@/assets/coffee-bean.png";
 import RecipeSteps from "./RecipeSteps";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { fetchRecipes } from "@/lib/features/recipes/recipesSlice";
+import cup from "@/assets/Sad-coffee-cup.png";
 
 interface RecipePageProps {
   params: {
-    id: string;
+    name: string;
   };
 }
 
 const Recipe: React.FC<RecipePageProps> = ({ params }) => {
-  const { id } = params;
+  const { name } = params;
   const dispatch = useAppDispatch();
-  const recipeState = useAppSelector((state) => state.recipes);
-
+  const recipeState = useAppSelector((state) => state.recipes); 
   const selectedRecipe = recipeState.currentRecipe;
 
   useEffect(() => {
-    if (id) {
-      dispatch(fetchRecipes({ id }));
+    if (name) {
+      dispatch(fetchRecipes({ name: name }));
     }
-  }, [dispatch, id]);
+  }, [dispatch, name]);
 
   if (recipeState.status === "loading") {
-    return <p className="py-16 sm:mx-16 mx-6">Loading...</p>;
+    return (
+      <>
+        <p className="py-16 sm:mx-16 mx-6 flex justify-center items-center">
+          Loading <span className="loading loading-ball loading-lg"></span>
+          <span className="loading loading-ball loading-lg"></span>
+          <span className="loading loading-ball loading-lg"></span>
+        </p>
+      </>
+    );
   }
 
   if (recipeState.status === "failed" || !selectedRecipe)
-    return <p className="py-16 sm:mx-16 mx-6">No recipe found</p>;
+    return (
+      <div className="flex flex-col sm:flex-row py-16 sm:mx-16 mx-6 justify-center items-center h-screen gap-4">
+        <img src={cup.src} alt="not found" />
+        <p className="heading-3">No recipe found</p>
+      </div>
+    );
 
   return (
     <div className="py-16 sm:mx-16 mx-6">

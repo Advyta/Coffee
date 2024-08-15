@@ -13,13 +13,7 @@ export interface State {
   error: string | null;
 }
 
-export const initialState: State = {
-  recipes: [],
-  status: 'idle',
-  currentRecipe: null,
-  pagination: { totalItems: 0, totalPages: 1, currentPage: 1, itemsPerPage: 10 },
-  error: null
-}
+
 
 export interface Coffee  {
   _id: string;
