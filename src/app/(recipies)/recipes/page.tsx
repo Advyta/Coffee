@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation"; 
 import { fetchRecipes } from "@/lib/features/recipes/recipesSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { State } from "@/lib/types";
@@ -16,8 +17,8 @@ export default function Recipes() {
   const state: State = useAppSelector((state) => state.recipes);
   const recipes = state.recipes;
   const pagination = state.pagination;
-  const [selectedCategory, setSelectedCategory] =
-    useState<string>("ICED BEVERAGES");
+  const pathname = usePathname();
+  const [selectedCategory, setSelectedCategory] = useState<string>("ICED BEVERAGES");
   const [focusIndex, setFocusIndex] = useState<number>(0);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -31,6 +32,15 @@ export default function Recipes() {
   ];
 
   useEffect(() => {
+    const storedCategory = localStorage.getItem("selectedCategory");
+    if (storedCategory && pathname.startsWith("/recipes")) {
+      setSelectedCategory(storedCategory);
+    } else {
+      setSelectedCategory("ICED BEVERAGES");
+    }
+  }, [pathname]);
+
+  useEffect(() => {
     dispatch(
       fetchRecipes({ category: selectedCategory, page: currentPage, limit: 10 })
     );
@@ -39,15 +49,6 @@ export default function Recipes() {
   useEffect(() => {
     localStorage.setItem("selectedCategory", selectedCategory);
   }, [selectedCategory]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const storedCategory = localStorage.getItem("selectedCategory");
-      if (storedCategory) {
-        setSelectedCategory(storedCategory);
-      }
-    }
-  }, []);
 
   useEffect(() => {
     if (buttonRefs.current[focusIndex]) {

@@ -83,8 +83,8 @@ const Button: React.FC<ButtonProps> = ({
       onMouseEnter={hoverEnter}
       onMouseLeave={hoverLeave}
       onKeyDown={handleKeyDown}
-      className={`text-dark-text bg-button-color body-m px-3 py-1 mt-2 rounded-full min-w-4 hover:text-active-text capitalize ${
-        activated ? "text-active-text border-button-color bg-card-bg" : ""
+      className={`bg-button-color body-m px-3 py-1 mt-2 rounded-full min-w-4 hover:text-active-text capitalize ${
+        activated ? "text-active-text border-button-color bg-card-bg" : "text-dark-text"
       }`}
     >
       {content}
