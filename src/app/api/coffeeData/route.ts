@@ -37,7 +37,7 @@ export async function GET(req: NextRequest) {
       coffeeData = await CoffeeRecipe.find(query);
     }
 
-    console.log("Database Response:", coffeeData);
+    // console.log("Database Response:", coffeeData);
 
     const totalItems = await CoffeeRecipe.countDocuments(query);
     const totalPages = limit > 0 ? Math.ceil(totalItems / limit) : 1;

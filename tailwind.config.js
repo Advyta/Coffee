@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         background: " oklch(13.35% 0.041 45.95)",
         "background-40": "oklch(13.35% 0.041 45.95 / 40%)",
+        "detail-text-bg": "oklch(24% 0.004 286 / 60%)",
         "card-bg": "oklch(32% 0.041 45.95 / 40%)",
         "inactive-text": "oklch(80% 0.02 90)",
         "active-text": "oklch(95% 0.02 90)",
@@ -37,7 +38,7 @@ module.exports = {
         "1/15": "15%",
       },
       listStyleImage: {
-        coffeeBean: 'url("/src/app/assets/coffee-bean.png")'
+        coffeeBean: 'url("/src/app/assets/coffee-bean.png")',
       },
     },
   },

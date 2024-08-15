@@ -37,11 +37,13 @@ const RecipeSteps: React.FC<stepsProps> = ({ steps }) => {
                     loading="lazy"
                     width={256}
                     height={154}
-                    className="rounded-md basis-1/4 flex"
+                    className="rounded-md basis-1/4 flex md:ml-2 ml-0"
                   />
                 )}
               </div>
-              <p className="pl-2 basis-1/2">{step.text}</p>
+              <p className="p-2 basis-1/2 backdrop-blur-sm rounded-xl bg-detail-text-bg max-w-2xl">
+                {step.text}
+              </p>
             </div>
           </li>
         ))}
