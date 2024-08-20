@@ -1,8 +1,12 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation"; 
-import { fetchRecipes } from "@/lib/features/recipes/recipesSlice";
+import { useRouter, useSearchParams } from "next/navigation";
+import {
+  fetchRecipes,
+  setCategory,
+  setPage,
+} from "@/lib/features/recipes/recipesSlice";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { State } from "@/lib/types";
 import RecipeCard from "./RecipeCard";
@@ -13,15 +17,17 @@ import { ScrollParallax } from "react-just-parallax";
 import Pagination from "@/components/Pagination/Pagination";
 
 export default function Recipes() {
+  const [isClient, setIsClient] = useState(false);
   const dispatch = useAppDispatch();
   const state: State = useAppSelector((state) => state.recipes);
   const recipes = state.recipes;
   const pagination = state.pagination;
-  const pathname = usePathname();
-  const [selectedCategory, setSelectedCategory] = useState<string>("ICED BEVERAGES");
+  const selectedCategory = state.selectedCategory;
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
   const [focusIndex, setFocusIndex] = useState<number>(0);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
 
   const categories: string[] = [
     "ICED BEVERAGES",
@@ -32,23 +38,35 @@ export default function Recipes() {
   ];
 
   useEffect(() => {
-    const storedCategory = localStorage.getItem("selectedCategory");
-    if (storedCategory && pathname.startsWith("/recipes")) {
-      setSelectedCategory(storedCategory);
-    } else {
-      setSelectedCategory("ICED BEVERAGES");
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      const storedCategory = searchParams.get("category");
+      const storedPage = searchParams.get("page");
+
+      const category = storedCategory || "ICED BEVERAGES";
+      const page = storedPage ? parseInt(storedPage, 10) : 1;
+
+      dispatch(setCategory(category));
+      dispatch(setPage(page));
+
+      router.replace(
+        `/recipes?category=${encodeURIComponent(category)}&page=${page}`
+      );
     }
-  }, [pathname]);
+  }, [isClient, searchParams]);
 
   useEffect(() => {
     dispatch(
-      fetchRecipes({ category: selectedCategory, page: currentPage, limit: 10 })
+      fetchRecipes({
+        category: selectedCategory,
+        page: pagination.currentPage,
+        limit: 10,
+      })
     );
-  }, [dispatch, selectedCategory, currentPage]);
-
-  useEffect(() => {
-    localStorage.setItem("selectedCategory", selectedCategory);
-  }, [selectedCategory]);
+  }, [dispatch, selectedCategory, pagination.currentPage]);
 
   useEffect(() => {
     if (buttonRefs.current[focusIndex]) {
@@ -58,8 +76,9 @@ export default function Recipes() {
   }, [focusIndex]);
 
   const handleCategoryClick = (category: string) => {
-    setSelectedCategory(category);
-    setCurrentPage(1);
+    dispatch(setCategory(category));
+    dispatch(setPage(1));
+    router.replace(`/recipes?category=${encodeURIComponent(category)}&page=1`);
   };
 
   const setFocus = (index: number) => {
@@ -67,7 +86,10 @@ export default function Recipes() {
   };
 
   const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+    dispatch(setPage(page));
+    router.replace(
+      `/recipes?category=${encodeURIComponent(selectedCategory)}&page=${page}`
+    );
   };
 
   return (

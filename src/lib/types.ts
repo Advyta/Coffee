@@ -9,11 +9,10 @@ export interface State {
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
   recipes: Coffee[]; 
   currentRecipe: Coffee | null,
+  selectedCategory: string,
   pagination: Pagination;
   error: string | null;
 }
-
-
 
 export interface Coffee  {
   _id: string;

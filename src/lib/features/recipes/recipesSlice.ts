@@ -6,6 +6,7 @@ export const initialState: State = {
   recipes: [],
   status: "idle",
   currentRecipe: null,
+  selectedCategory: "ICED BEVERAGES",
   pagination: {
     totalItems: 0,
     totalPages: 1,
@@ -49,7 +50,14 @@ export const fetchRecipes = createAsyncThunk(
 const recipesSlice = createSlice({
   name: "recipes",
   initialState,
-  reducers: {},
+  reducers: {
+    setCategory(state, action) {
+      state.selectedCategory = action.payload;
+    },
+    setPage(state, action) {
+      state.pagination.currentPage = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchRecipes.pending, (state) => {
@@ -87,4 +95,5 @@ const recipesSlice = createSlice({
       });
   },
 });
+export const { setCategory, setPage } = recipesSlice.actions;
 export default recipesSlice.reducer;

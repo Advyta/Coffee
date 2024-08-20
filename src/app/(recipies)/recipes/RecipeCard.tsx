@@ -2,8 +2,9 @@ import Button from "@/components/Button/Button";
 import { Coffee } from "@/lib/types";
 import React from "react";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import PrepTime from "@/components/PrepTime/PrepTime";
+import { useAppSelector } from "@/lib/hooks";
 
 interface RecipeCardProps {
   recipes: Coffee[];
@@ -12,11 +13,20 @@ interface RecipeCardProps {
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipes }) => {
   const pathname = usePathname();
   const router = useRouter();
-  
+
+  const { selectedCategory, currentPage } = useAppSelector((state) => ({
+    selectedCategory: state.recipes.selectedCategory,
+    currentPage: state.recipes.pagination.currentPage,
+  }));
+
   const handleReadRecipeClick = (recipeName: string) => {
     const encodedName = encodeURIComponent(recipeName);
-    router.push(`/recipes/${encodedName}`);
-    console.log('Navigating to recipe:', encodedName);
+    router.push(
+      `/recipes/${encodedName}?category=${encodeURIComponent(
+        selectedCategory
+      )}&page=${currentPage}`
+    );
+    console.log("Navigating to recipe:", encodedName);
   };
 
   return (
@@ -25,9 +35,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipes }) => {
         <div key={recipe._id} className="justify-self-center">
           <div
             className={`flex flex-col gap-4 lg:gap-8 sm:flex-row px-8 py-6 lg:px-14 md:py-9 rounded-3xl max-w-xl justify-center backdrop-blur-sm ${
-              pathname === "/"
-                ? "bg-background-40 "
-                : "bg-card-bg"
+              pathname === "/" ? "bg-background-40 " : "bg-card-bg"
             }`}
           >
             <div className=" flex justify-center sm:basis-1/2">
