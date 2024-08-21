@@ -95,10 +95,10 @@ const Recipe: React.FC<RecipePageProps> = ({ params }) => {
 
         <div className="my-6 rounded-xl p-4 bg-detail-text-bg max-w-3xl">
           <h2 className="heading-3 italic pb-2">Ingredients</h2>
-          <ul className="body-m">
-            {selectedRecipe.recipeIngredient.map((item) => (
+          <ul className="body-l">
+            {selectedRecipe.recipeIngredient.map((item, index) => (
               <li
-                key={item}
+                key={index}
                 style={{
                   backgroundImage: `url(${coffee.src})`,
                   backgroundSize: "18px 18px",

@@ -19,7 +19,7 @@ const RecipeSteps: React.FC<stepsProps> = ({ steps }) => {
         {steps.map((step, index) => (
           <li
             key={index}
-            className={`${styles["custom-step"]} step step-primary body-m py-2`}
+            className={`${styles["custom-step"]} step step-primary body-l py-2`}
             data-content={index + 1}
             style={{ textAlign: "left" }}
           >

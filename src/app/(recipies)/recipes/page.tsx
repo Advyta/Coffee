@@ -93,7 +93,7 @@ export default function Recipes() {
   };
 
   return (
-    <div className="py-16 md:mx-16 mx-4 overflow-hidden">
+    <div className="py-16 md:mx-16 mx-4 overflow-hidden min-h-screen">
       <ScrollParallax isAbsolutelyPositioned>
         <>
           <img
