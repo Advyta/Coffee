@@ -14,7 +14,7 @@ const navigation: {
   name: string;
   href: string;
 }[] = [
-  { name: "Coffee's Journey", href: "/" },
+  { name: "Coffee's Journey", href: "/journey" },
   { name: "Recipes", href: "/recipes" },
 ];
 

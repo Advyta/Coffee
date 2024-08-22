@@ -10,11 +10,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const BreakSection = () => {
+  
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "break-section",
-        toggleActions: "restart pause recerse reset",
+        toggleActions: "restart pause reverse reset",
         start: "top top",
         end: "bottom top",
         scrub: 1,
