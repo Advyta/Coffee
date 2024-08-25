@@ -13,3 +13,9 @@ body {
 .journey {
   background: linear-gradient(225deg, #140300, #291307, #402816, #563e27, #6e5539, #856e4d, #9d8861, #b4a478, #cbc08f);
 }
+
+@layer utilities {
+  .img-block {
+    aspect-ratio: 2/1;
+  }
+}
