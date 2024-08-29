@@ -39,8 +39,8 @@ export default function JourneySection() {
       if (ref) {
         tl.fromTo(
           ref,
-          { opacity: 0 },
-          { opacity: 1, duration: 0.5, ease: "power3.out", delay: index * 0.1 } // Sequential animation with 0.3s delay between each
+          { opacity: 0, rotation: 10 },
+          { opacity: 1, rotation: 0, duration: 0.5, ease: "power3.out", delay: index * 0.05 } 
         );
       }
     });

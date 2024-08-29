@@ -119,7 +119,7 @@ const Recipe: React.FC<RecipePageProps> = ({ params }) => {
 
   return (
     <div
-      className="relative w-full bg-cover snap-y snap-mandatory overflow-hidden"
+      className="min-h-screen relative w-full bg-cover snap-y snap-mandatory overflow-hidden"
       style={{
         backgroundImage: `url(${bgImage})`,
         aspectRatio: aspectRatio,
