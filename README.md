@@ -36,8 +36,8 @@ Coffee Creations is a responsive full-stack website where users can explore and 
 
 ## Technologies Used
 
-- **Frontend**: React, Next.js, Tailwind CSS, GSAP
-- **Backend**: Node.js, Express, MongoDB, Mongoose
+- **Frontend**: React, Next.js, Tailwind CSS, GSAP, Daisy UI
+- **Backend**: MongoDB, Mongoose
 - **State Management**: Redux Toolkit
 
 https://github.com/user-attachments/assets/76c4b9b0-86ef-4f0d-9cba-90581e90b31f

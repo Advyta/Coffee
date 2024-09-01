@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useTransition } from "react";
 import {
   Disclosure,
   DisclosureButton,
@@ -7,8 +7,9 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import coffeeIcon from "../../assets/coffee-cup.png";
+import toast from "react-hot-toast";
 
 const navigation: {
   name: string;
@@ -20,6 +21,20 @@ const navigation: {
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    toast.dismiss("page-load");
+  }, [pathname]);
+
+  const handleNavigation = (href: string) => {
+    toast.loading("Loading...", { id: "page-load" });
+
+    startTransition(() => {
+      router.push(href);
+    });
+  };
 
   return (
     <Disclosure as="nav" className="absolute z-20 w-full mx-auto">
@@ -70,15 +85,15 @@ const Navbar = () => {
               <div className="hidden md:ml-6 md:block">
                 <div className="flex space-x-4">
                   {navigation.map((item) => (
-                    <Link
+                    <button
                       key={item.name}
-                      href={item.href}
-                      className={`p-2 ${
+                      onClick={() => handleNavigation(item.href)}
+                      className={`p-2 cursor-pointer ${
                         pathname === item.href ? "" : "text-inactive-text"
                       } body-l hover:text-active-text`}
                     >
                       {item.name}
-                    </Link>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -94,10 +109,10 @@ const Navbar = () => {
                 <div key={item.name} className="flex justify-center">
                   <DisclosureButton
                     as="a"
-                    href={item.href}
+                    onClick={() => handleNavigation(item.href)}
                     className={`${
                       pathname === item.href ? "underline" : ""
-                    } heading-3 rounded-md px-3 py-2 hover:underline underline-offset-2`}
+                    } heading-3 rounded-md px-3 py-2 hover:underline underline-offset-2 cursor-pointer`}
                   >
                     {item.name}
                   </DisclosureButton>

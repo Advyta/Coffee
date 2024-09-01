@@ -6,6 +6,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import StoreProvider from "./StoreProvider";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 config.autoAddCss = false;
 
@@ -32,6 +33,7 @@ export default function RootLayout({
       <StoreProvider>
         <body className={inter.className}>
           <header>
+            <Toaster />
             <Navbar />
           </header>
           <main>{children}</main>
