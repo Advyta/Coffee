@@ -15,8 +15,8 @@ const navigation: {
   name: string;
   href: string;
 }[] = [
-  { name: "Coffee's Journey", href: "/journey" },
   { name: "Recipes", href: "/recipes" },
+  { name: "Coffee's Journey", href: "/journey" },
 ];
 
 const Navbar = () => {
@@ -71,7 +71,10 @@ const Navbar = () => {
               </DisclosureButton>
             </div>
             <div className="flex flex-1 justify-between items-center">
-              <Link href="/" className="body-l sm:heading-3 p-2 flex items-center">
+              <Link
+                href="/"
+                className="body-l sm:heading-3 p-2 flex items-center"
+              >
                 <img
                   src={coffeeIcon.src}
                   alt="Coffee Creations"
