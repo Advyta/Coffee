@@ -11,9 +11,9 @@ export const coffeeJourney: {
   {
     step: 1,
     title: "Planting",
-    text: `Coffee trees thrive in a specific region along the equator known as “The Bean Belt,” between 25° North and 30° South. In this area, Arabica coffee grows at high altitudes in mineral-rich soil, requiring more care and cooler temperatures. Robusta, true to its name, is a hardier plant that thrives in hotter climates and lower altitudes. 
+    text: `Coffee trees thrive in a specific region along the equator known as &ldquo;The Bean Belt&rdquo;, between 25° North and 30° South. In this area, Arabica coffee grows at high altitudes in mineral-rich soil, requiring more care and cooler temperatures. Robusta, true to its name, is a hardier plant that thrives in hotter climates and lower altitudes. 
 
-The coffee we love comes from the seed inside a fruit called the “coffee cherry.” This seed, known as the “coffee bean,” starts out light green or yellowish, depending on the type (Arabica or Robusta). When processed—pulped, roasted, and ground—it becomes the coffee we brew. Coffee plants begin as seedlings in shaded nurseries, where they are nurtured until strong enough to be planted. After about 15 months, these seedlings are moved to their permanent location, usually during the rainy season to help their roots establish. It takes around four years for a coffee tree to bear fruit and produce coffee cherries.`,
+The coffee we love comes from the seed inside a fruit called the coffee cherry. This seed, known as the Coffee Bean, starts out light green or yellowish, depending on the type (Arabica or Robusta). When processed—pulped, roasted, and ground—it becomes the coffee we brew. Coffee plants begin as seedlings in shaded nurseries, where they are nurtured until strong enough to be planted. After about 15 months, these seedlings are moved to their permanent location, usually during the rainy season to help their roots establish. It takes around four years for a coffee tree to bear fruit and produce coffee cherries.`,
     image: {
       src: "/assets/coffee-production/planting.png",
       width: 1254,
