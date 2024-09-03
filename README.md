@@ -40,5 +40,10 @@ Coffee Creations is a responsive full-stack website where users can explore and 
 - **Backend**: MongoDB, Mongoose
 - **State Management**: Redux Toolkit
 
-https://github.com/user-attachments/assets/76c4b9b0-86ef-4f0d-9cba-90581e90b31f
+
+https://github.com/user-attachments/assets/d2c672c4-d1a9-447a-b05a-35b469930296
+
+
+https://github.com/user-attachments/assets/b98f61f5-bfb0-4649-ac7d-e7b471d4a257
+
 
