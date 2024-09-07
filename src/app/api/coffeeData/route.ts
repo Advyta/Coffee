@@ -63,8 +63,8 @@ export async function GET(req: NextRequest) {
   }
 }
 
-// Handler for other HTTP methods
-export async function OTHER(req: NextRequest) {
+// Handle unsupported HTTP methods in a single handler
+export async function POST(req: NextRequest) {
   return NextResponse.json(
     { error: `Method ${req.method} Not Allowed` },
     { status: 405, headers: { Allow: "GET" } }
