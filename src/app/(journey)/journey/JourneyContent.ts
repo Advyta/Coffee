@@ -23,7 +23,7 @@ The coffee we love comes from the seed inside a fruit called the coffee cherry. 
   {
     step: 2,
     title: "Harvesting",
-    text: `Newly planted coffee trees take about 3 to 4 years to produce fruit, known as coffee cherries. These cherries turn a bright red when ripe and ready for harvest. Typically, there's one major harvest each year, but in countries like Colombia, where coffee flowers twice annually, there’s a main and secondary crop.
+    text: `Newly planted coffee trees take about 3 to 4 years to produce fruit, known as coffee cherries. These cherries turn a bright red when ripe and ready for harvest. Typically, there’s one major harvest each year, but in countries like Colombia, where coffee flowers twice annually, there’s a main and secondary crop.
 
 In most coffee-growing regions, harvesting is done by hand, a labor-intensive process. However, in flatter areas like Brazil, where coffee fields are vast, mechanized harvesting is common. There are two main harvesting methods:
 
@@ -33,7 +33,7 @@ All cherries are stripped from the branch at once, either by hand or machine, wi
 2. SELECTIVE PICKING:
 Only the ripe cherries are carefully picked by hand. This method, though more labor-intensive and costly, is used for high-quality Arabica beans. Skilled pickers rotate through the fields every 8-10 days, choosing only the ripest cherries.
 
-A good picker can harvest 100 to 200 pounds of coffee cherries a day, yielding 20 to 40 pounds of coffee beans. The day's haul is weighed, and pickers are paid based on their work before the cherries are sent to the processing plant.
+A good picker can harvest 100 to 200 pounds of coffee cherries a day, yielding 20 to 40 pounds of coffee beans. The day’s haul is weighed, and pickers are paid based on their work before the cherries are sent to the processing plant.
 
 Selective picking is favored for high-quality coffee, while stripping prioritizes speed and cost, often resulting in a mix of cherries at different ripeness levels that need sorting later.`,
     image: {
@@ -54,7 +54,7 @@ In the washed method, water is used to cleanly separate the fruit from the bean,
 The traditional dry method involves drying coffee cherries in the sun before separating the fruit from the bean. Though it’s cost-effective and eco-friendly, it can lead to inconsistent flavors if unripe cherries are mixed in. When done well, this method produces beans with sweet, fruity notes as the beans absorb qualities from the drying cherries.
 
 3. HONEY PROCESS: 
-The honey process is a hybrid between the washed and dry methods. It uses water to remove most of the fruit but leaves some sticky mucilage (the “honey”) on the beans, which are then dried in the sun. This method balances the bean's natural flavors with the sweetness of the fruit. It’s popular in regions like Costa Rica and has various subcategories, such as Yellow, Red, and Black Honey, each offering different flavor profiles.
+The honey process is a hybrid between the washed and dry methods. It uses water to remove most of the fruit but leaves some sticky mucilage (the “honey”) on the beans, which are then dried in the sun. This method balances the bean’s natural flavors with the sweetness of the fruit. It’s popular in regions like Costa Rica and has various subcategories, such as Yellow, Red, and Black Honey, each offering different flavor profiles.
 
 In all methods, timely processing after picking is crucial to prevent spoilage. The dry method is often used in regions with limited water resources, while the washed method is common in areas where water is plentiful. The honey method offers a middle ground, preserving the bean’s natural qualities while adding a touch of sweetness.`,
     image: {
