@@ -7,7 +7,7 @@ export default function JourneySection() {
   return (
     <div className="min-h-screen mx-16 pt-16">
       <div className="">
-        <h1 className="heading-1 italic">Your Coffee's Journey</h1>
+        <h1 className="heading-1 italic">Your Coffee&#39;s Journey</h1>
       </div>
       <div>
         {coffeeJourney.map((step) => (
