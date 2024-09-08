@@ -21,6 +21,7 @@ export default function JourneySection() {
                 width={step.image.width}
                 placeholder="empty"
                 loading="lazy"
+                layout="responsive"
                 className="img-block max-w-[600px] rounded-xl"
               />
               <pre className="body-l text-justify text-wrap">{step.text}</pre>
