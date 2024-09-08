@@ -7,8 +7,8 @@ import gsap from "gsap";
 import Button from "@/components/Button/Button";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { fetchRecipes } from "@/lib/features/recipes/recipesSlice";
-import CardPlaceholder from "../(recipies)/recipes/CardPlaceholder";
-import RecipeCard from "../(recipies)/recipes/RecipeCard";
+import CardPlaceholder from "../(recipes)/recipes/CardPlaceholder";
+import RecipeCard from "../(recipes)/recipes/RecipeCard";
 
 const selectedRecipes: string[] = [
   "6681b8d94507f78afe801843",
